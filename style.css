@@ -1,0 +1,734 @@
+/**
+ * Theme Name:     Kontek
+ * Author:         Start Advertising, Inc.
+ * Template:       twentytwenty
+ * Version:        5.6.01
+ * Text Domain:	   kontek
+ * Description:    Kontek theme based on 2020 WordPress theme.
+ */
+
+/* Undo some mobile codes */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .form-control {
+    width:80%!important;
+  }
+  label[for=BCity],
+  label[for=SCity] {
+    margin-top:-7px;
+  }
+  #orderForm input[name='BState'],
+  #orderForm input[name='SState'] {
+    width: 85%!important;
+  }
+}
+
+@media (min-width: 700px) {
+  .header-inner {
+      padding:10px!important;
+  }
+}
+.faux-heading > a {
+  height:75px;
+  width:150px;
+}
+
+/* Turn Your Phone To Landscape */
+@media (max-width: 850px) {
+  @media (orientation:landscape) {
+      #mobile-warning-box {
+            display: none!important;
+      }
+      #site-content{
+          padding-bottom:100px!important;
+
+      }
+      .header-inner {
+          /* padding: 0 0!important; */
+      }
+      input#cartBtn, input#toggleDrawing {
+          height:35px;
+          width: 60px!important;
+          font-size: 6px;
+          margin-top:3px;
+      }
+      input#toggleDrawing {
+        margin-right:50px;
+      }
+      label#cartQty1 {
+          width: 110px!important;
+      }
+      .parts-search-bar {
+          position:absolute!important;
+          top:-12px!important;
+          height:90px!important;
+      }
+      #searchField {
+          margin: 24px 0 0px 24px!important;
+      }
+      .desc {
+        font-size: x-small!important;
+      }
+      #cartQty {
+          margin: -29px -31px 0px 0px!important;
+      }
+      div.header-titles {
+        /* height:22px!important; */
+      }
+      #table-of-parts {
+        margin-top:40%!important;
+      }
+  }
+  @media (orientation:portrait) {
+      #mobile-warning-box {
+          display:block;
+          position:absolute;
+          top:0px;
+          left:0px;
+          right:0px;
+          bottom:0px;
+          width:100%;
+          height:100%;
+          z-index:99999;
+          background-color: rgba(255, 255, 255, 0.7);
+          margin:auto auto;
+          padding: 35% 10% 10% 10%!important;
+      }
+      #mobile-warning-box-header > h2 {
+          font-size: x-large;
+          text-align:center!important;
+          color:black;
+      }
+      #mobile-warning-box-image {
+          width:80%;
+          margin:0 auto;
+      }
+      #mobile-warning-box-content {
+          font-size:large;
+          text-align:center!important;
+          color:black;
+      }
+  }
+  .project_row > div > span {
+    font-size:small;
+  }
+  #pdfIframe {
+    margin-top: 30%;
+  }
+}
+/* Turn Your Phone To Landscape */
+
+
+/* Changes made by Client 7/10/2020 */
+
+
+
+.section-inner {
+     width: unset!important;
+}
+
+span.spare-parts {
+     margin-bottom:-25px!important;
+}
+
+.header-inner {
+    display:block!important;
+}
+
+.header-inner .toggle svg {
+     display:none;
+}
+
+div.header-titles {
+  width:100%!important;
+}
+
+ul.primary-menu {
+  justify-content: unset!important;
+}
+
+div.header-toggles {
+    margin-right: 0px!important;
+}
+
+div.toggle-wrapper {
+  width:100%;
+}
+
+button.toggle.search-toggle {
+    margin:0px;
+    padding:0px;
+    float:right;
+}
+/* Change made my Client 7/10/2020 */
+
+/* Header Styles
+ * Desc: This section is where you will find styles for the elements in the
+ *      page header.php.
+ */
+
+.item_added {
+    width:70px;
+}
+#site-header {
+    z-index: 2;
+}
+ .parts-search-bar {
+    width: 102%;
+    position: fixed;
+    z-index: 1;
+    top: 11%;
+   /* margin-top: -13px; */     /*changed  5/17 on macbook */
+}
+#ProjDesc {
+    white-space: nowrap;
+}
+.page-template-order-spare-parts-template > #site-header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+}
+ #table-of-parts {
+    margin-top: 19%;  /*Lets hope this works without this !important; */
+ }
+
+ div.desktop-search-toggle {
+   float:left;
+ }
+
+ div.header-titles {
+    background-image: url(/parts/wp-content/uploads/2020/02/Kontek-Logo-80-1.png);
+    width: 180px;
+    height: 55px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:right;
+}
+div.quick-contact-div {
+    background-color:#2C3E50;
+    align-items:center;
+}
+a.quick-tel::before {
+    content:url(/parts/wp-content/uploads/2020/02/contacts-yellow-phone-icon-11562990620xfv0lul4ce.png);
+    display:inline-block;
+    margin-left:75px;
+    margin-right:5px;
+}
+a.quick-tel {
+    color:white!important;
+    text-decoration:none;
+    font-size:14px;
+    line-height:30px;
+}
+a.quick-email::before {
+    content:url(/parts/wp-content/uploads/2020/02/conacts-yellow-envelope-e1581529851436.png);
+    display:inline-block;
+    margin-left:50px;
+    margin-right:5px;
+}
+a.quick-email {
+    color:white!important;
+    text-decoration:none!important;
+    font-size:14px;
+    line-height:30px;
+}
+a.social {
+    float:right;
+    padding:3px 5px;
+}
+#yt {
+    margin-top:5px;
+    margin-right:75px;
+}
+#li {
+    height:15px;
+    margin-top:3px;
+}
+div.header-navigation-wrapper {
+    margin:0 auto;
+}
+div.header-toggles {
+    margin-right:75px!important;
+}
+span.spare-parts {
+    color:#2C3E50!important;
+    text-transform: capitalize;
+    font-size:14px;
+    font-weight:bold;
+    margin-left:15px;
+    border-bottom:10px solid #FFDE00;
+    padding-bottom:17%;
+    margin-bottom:-40%;
+}
+
+.primary-menu {
+}
+.primary-menu > li > a {
+    color:#2C3E50!important;
+    font-size:16px;
+}
+
+/* Home Page Styles
+ * Desc: This section is where you will find styles for the elements
+ *       in the page home-page-template.php.
+ */
+.welcome-home-message {
+    color:#2C3E50!important;
+    font-size:30px;
+    font-weight:500;
+}
+#loginForm > [name="Username"] ,
+#loginForm > [name="Password"] {
+    background-color:#D5D9E9!important;
+    border:none;
+    border-bottom:1px solid black;
+}
+input[name="Login"] {
+    background-color: #21368B!important;
+    height: 43px;
+    width: 140px;
+    line-height: 7px;
+    margin-top:30px;
+}
+/* Projets Page Styles
+ * Desc: This section is where you will find styles for the elements
+ *       in the page select-project-template.php
+ */
+input[name="Open"] {
+    background-color: #21368B!important;
+    height: 43px;
+    width: 140px;
+    line-height: 7px;
+    margin-top:30px;
+}
+div.project_head > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div.project_row:hover {
+    background-color:#FEDE01;
+}
+div.partRow {
+    background-color:#f8f9fa;
+}
+div.partRow:hover {
+    background-color:#FEDE01!important;
+}
+div.partRow:visited {
+    background-color:#FEDE01!important;
+}
+div.text {
+    max-width: 400px;
+}
+/* Order Spare Parts Page
+ * Desc: This section is where you will find styles for the elements
+ *       in the page order-spare-prats-template.php
+ */
+ .delete>button {
+    background-color: #22368F!important;
+    color: white;
+    border-radius: 25%;
+    /* width: 40%; */
+    /* height: 40%; */
+    border: 1px solid black;
+}
+ #cartQtyImg {
+     height:50px;
+     /* margin: 0px 158px 0px 0px; */
+     float: right;
+     cursor:pointer;
+ }
+ #cartQty {
+     display: inline;
+     margin: 10px -31px 0px 0px;
+     float: right;
+     font-size: medium;
+     cursor:pointer;
+ }
+.parts-search-bar {
+    height:130px;
+    background-color:#D5D6DD;
+    border-bottom:2px solid #707070;
+}
+
+#searchField{
+    border: 1px solid #FFEDE8;
+    float: left;
+    height: 35px;
+    padding-left: 25px;
+    margin:47px 0 0px 0px;
+    width: 90%;
+}
+
+#searchSubmit{
+    background: url(/parts/wp-content/uploads/2020/02/209-2093777_white-magnifying-glass-icon-png-search-white-icon.png) no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 20px;
+    margin: 45px 0 0px -39px;
+    width: 20px;
+}
+
+.hover-and-click {
+    color:blue;
+    font-size:larger;
+}
+.projectSpan {
+    font-size: large;
+    font-weight: bold;
+}
+
+.projectNumberSpan {
+        color: #21368B;
+        font-size: large;
+        font-weight: 600;
+        margin-left: 25px;
+}
+div.addyText {
+    max-width: 165px;
+    max-height:40px;
+}
+div.addyText span {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 90%;
+    font-size:small;
+}
+div.text {
+    max-width: 370px;
+    max-height:120px;
+    padding:10px 5px;
+}
+div.text span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+input[name="OpenDrawing"] {
+    background-color: #21368B!important;
+    height: 43px;
+    width: 200px;
+    line-height: 7px;
+    margin-top:30px;
+    margin-right:50px;
+}
+
+#cartBtn {
+    background-color: #21368B!important;
+    /*background-image: url(/wp-content/uploads/2020/04/cartBtn.png);*/
+    height: 43px;
+    width: 200px;
+    line-height: 7px;
+    margin-top:5px;
+}
+.partsTableHead {
+    height: 97px;
+    background-color: #D5D6DD;
+    border-left: 2px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#alert-box {
+    display:none;
+    background-color: #20358C;
+    width: 400px;
+    min-height: 150px;
+    color: white;
+    position: fixed;
+    padding: 40px;
+    font-weight: bold;
+    font-size: large;
+    top: 20%;
+    left: 38%;
+    z-index: 99;
+}
+#drawing {
+    display:none;
+}
+#pdfIframe {
+    width:100%!important;
+    height:100%;
+    margin-left:10%;
+    min-height: 800px;
+    margin-top: 19%;
+}
+
+
+/* Cart Page
+ * Desc: This section is where you will find styles for the elements
+ *       in the page cart-template.php
+ */
+.checkout-div {
+    background-color:#D4D5D6;
+    border:1px solid white;
+}
+span.billingDetails {
+    color:000000;
+    font-size:larger;
+    font-weight:bold;
+}
+input[name='shipToDiff'] {
+    border:1px solid black !important;
+    height:20px !important;
+    width:20px !important;
+}
+span.shipToDiff {
+    color:000000;
+    font-size:larger;
+    font-weight:bold;
+}
+#orderForm input {
+    height: 40px;
+    border: none;
+    width: 83%;
+    margin: 5px 11px;
+}
+.orderFormLabel {
+    font-weight:bold;
+    margin-left:11px;
+}
+label[for=BPhoneS],
+label[for=SZip] {
+  margin-left:-9px!important;
+}
+#orderForm input[name='BPhoneP'], {
+    height: 40px;
+    border: none;
+    width: 150px;
+}
+#orderForm input[name='BPhoneS'],
+#orderForm input[name='BZip'],
+#orderForm input[name='SZip']
+{
+    height: 40px;
+    border: none;
+    width: 80%;
+    margin: 5px 0 0 -10px;
+}
+
+#orderForm input[name='BState'],
+#orderForm input[name='SState'] {
+    width:190px;
+}
+
+#orderForm input[name='CallAt'] {
+    width:140px;
+    margin-right:0px;
+}
+
+#orderForm label[for='TimeZone'] {
+    white-space:nowrap;
+    margin-left:-45px;
+}
+
+#orderForm input[name='TimeZone'] {
+    width:90px;
+    margin-left:-45px;
+}
+
+#orderForm label[for='ContactVia'] {
+    white-space:nowrap;
+    margin-left: -60px;
+}
+
+#ContactViaE {
+    margin:0px !important;
+    width:20px!important;
+    height:20px!important;
+}
+
+#ContactViaP {
+    margin:0px !important;
+    width:20px!important;
+    height:20px!important;
+}
+
+table * {
+    border:none;
+}
+#CViaTable {
+    width: 110px;
+    margin-left: -43px;
+    margin-top:-5px;
+    border: 0px solid transparent!important;
+}
+
+.CVTDI {
+    padding:0px!important;
+    width:20px;
+}
+
+.CVTDL {
+    padding:0px!important;
+    width:70px;
+}
+
+span.cart-head-span {
+    font-size:large;
+    font-weight:bold;
+}
+
+.cartHeadProjNumb {
+    color:#20358C;
+    font-weight:bold;
+    margin-left:10px;
+}
+.cart-titles {
+    background-color:#D4D5D6;
+    height:60px;
+    width:100%;
+    margin-left:0px;
+}
+.cart-head-div > div.row {
+    width:100%;
+    margin-left:0px;
+}
+.item {
+    width: 100%;
+    margin-left: 0px;
+}
+span.cart-titles {
+    font-size:large;
+    font-weight:bold;
+}
+span.delete {
+    font-size:large;
+    font-weight:bold;
+    padding:auto;
+    text-align:center;
+}
+.nowrap {
+    white-space:nowrap;
+    overflow:scroll;
+}
+.checkout-cart-div {
+    background-color: #F1F1F2;
+    margin:0px;
+    overflow:hidden;
+}
+.cart-footer {
+    padding:10px 40px;
+}
+.RFONotice {
+    font-weight:bold;
+}
+.cart-submit {
+    background-color:#21368B!important;
+    width:105px!important;
+    height:45px!important;
+    text-align:center!important;
+    vertical-align:middle;
+    padding: 10px 5px 9px 7px !important;
+}
+#successDiv {
+    display:none;
+    margin-top:10%;
+}
+.successMessage {
+    color:#20358C;
+    font-size:22pt;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.successImg { */
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+/* On Page Search */
+/* Style the input */
+.on-page-search {
+width: 100%;
+font-size: 14px;
+line-height: 26px;
+color: #787d85;
+/* background-color: #fcfcfc; */
+border: 1px solid #e0e1e1;
+padding: 5px 15px;
+}
+
+/* Style the list */
+.demo-links {
+border-bottom: none;
+padding: 5px 5px;
+line-height: 36px;
+}
+
+/* Style the results */
+ .results {
+/*border:3px solid #de1919; */
+border: 1px solid #FEDE01;
+}
+
+.results:hover {
+border: 2px solid navy;
+}
+.noresults {
+    display:none;
+    color:grey;
+}
+
+/*  BUD's REQUESTED CHANGES */
+.form-control {
+    font-size:unset!important;
+}
+#addtocart,
+#dontaddtocart,
+#error {
+color: white;
+background-color: #21368B!important;
+height: 50px;
+width: 100px;
+border: 1px solid grey;
+vertical-align: middle;
+padding: 17px;
+}
+
+#dontadd {
+color: white;
+background-color: #21368B!important;
+height: 50px;
+width: 100px;
+border: 1px solid grey;
+vertical-align: middle;
+padding: 17px;
+}
+
+/* MOBILE STYLES */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .parts-search-bar {
+        width: 102%;
+        position: static;
+        z-index: 1;
+        top: 43%;
+        margin-top: 124px;
+    }
+    #searchField {
+    border: 1px solid #FFEDE8;
+    float: left;
+    height: 35px;
+    padding-left: 25px;
+    margin: 47px 0 0px 5px;
+    width: 70%;
+    }
+    #orderForm input {
+    width:unset;
+    }
+    #orderForm input[name='BPhoneP'], #orderForm input[name='BPhoneS'], #orderForm input[name='BZip'], #orderForm input[name='SZip'] {
+        height: 40px;
+        border: none;
+        width: 93px;
+        margin: 5px 11px;
+    }
+    #orderForm input[name='CallAt'] {
+        width: 77px;
+        margin-right: 0px;
+    }
+}
