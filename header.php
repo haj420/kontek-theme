@@ -22,10 +22,7 @@
 
 		<?php wp_head(); ?>
 
-		<!-- I've added a hard link to the stylesheet here due to some
-		fairly heavy caching.  This may need to be removed if either
-		a solution is found or the main site changes. -->
-		<link rel="stylesheet" href='<?php echo get_stylesheet_directory_uri(); ?>/styles.css'?>
+		
 	</head>
 
 	<body <?php body_class(); ?>>

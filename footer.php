@@ -14,7 +14,7 @@
 ?>
 			<!-- #site-footer -->
 
-		<?php wp_footer(); ?>
+
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script>window.jQuery || document.write('<script src="/kontek/js/jquery-3.4.1.min.js"><\/script>')</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -23,6 +23,6 @@
         <!-- Local fallback -->
 
 
-        <script src="<? echo get_stylesheet_directory_uri(); ?>/custom.js" async></script>
+      <?php wp_footer(); ?>
 	</body>
 </html>
