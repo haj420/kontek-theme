@@ -6,7 +6,11 @@
 
 get_header();
 
-$results = $wpdb->get_results("SELECT * from wp_projects");
+if(get_current_user_id() == '1') {
+  $results = $wpdb->get_results("SELECT * from wp_projects");
+} else {
+  $results = $wpdb->get_results("SELECT * from wp_projects where userID='".get_current_user_id()."'");
+}
 ?>
 
 <main id="site-content" role="main">
@@ -24,26 +28,7 @@ $results = $wpdb->get_results("SELECT * from wp_projects");
 <div class="row">
     <div class="col"></div>
     <div class="col-sm-12 col-lg-10">
-         <!--<table>
-           <th>Project # </th>
-            <th>Name</th>
-            <th>Location</th>
-            <th class='text'>Description</th>-->
-            <?PHP/*
-                $results = $wpdb->get_results("SELECT * from wp_projects");
-                foreach($results as $row) {
-                    echo "
-                    <tr class='project_row' id='".$row->projectNumber."' onclick='select_project(this.id);'>
-                    <!-- <td><input name='projectNumber' type='radio' value='".$row->projectNumber."'></td> -->
-                    <td>".$row->projectNumber."</td>
-                    <td>".$row->Facility."</td>
-                    <td>".$row->Street.", ".$row->City." ".$row->State." ".$row->zip."</td>
-                    <td class='text'><span>".$row->Description."</span></td>
-                    </tr>
-                    " ;
-                }*/
-                ?>
-        <!--</table>-->
+
         <!-- NEW RESPONSIVE LAYOUT -->
         <div class='row project_head mr-1 ml-1'>
             <div class='col-2 m-0 p-0 text-left'><span>Project #</span></div>

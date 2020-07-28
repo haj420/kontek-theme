@@ -19,9 +19,9 @@ get_header();
 <div class="row">
     <div class="col"></div>
     <div class="col">
-        <form id="loginForm" action="<? echo site_url(); ?>/projects-page" method="POST">
-            <input type="text" name="Username" placeholder="Username" />
-            <input type="text" name="Password" placeholder="Password" />
+        <form id="loginForm" action="https://www.kontekwater.com/parts/wp-login.php" method="POST">
+            <input type="text" id='username' name="log" placeholder="Username" />
+            <input type="text" id='password' name="pwd" placeholder="Password" />
     </div>
     <div class="col"></div>
 </div>
@@ -29,7 +29,7 @@ get_header();
     <div class="col text-center">
         <span class="forgot-password">Forgot Password?</span>
         <br>
-        <input type="submit" name="Login" value="Login">
+        <input id='customerLogin' type="submit" name="Login" value="Login" onclick=''>
     </div>
 </form>
 

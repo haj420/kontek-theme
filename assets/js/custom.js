@@ -292,8 +292,30 @@ $(".cart-submit").click(function() {
 }
 });
 
-
 //We need to add a button (NO) that closes the #alert-box
 $("#dontadd").click(function(){
   $("#alert-box").close();
+});
+
+/*
+Listen for customer login action $("#customerLogin") button
+Desc: This is the customer login section that runs a login
+function at /parts/wp-content/action.php to verify a Username
+and password set and either returns project numbers associated
+with that client or false.
+*/
+$("#customerLogin").click(function(){
+  if($("#username").val() && $("#password").val()) {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var dataString = 'action=login&username='+username+'&password='+password;
+    $.ajax({
+        type:"POST",
+        url: "/parts/action.php",
+        data: dataString,
+        success: function() {
+
+        }
+    });
+  }
 });
