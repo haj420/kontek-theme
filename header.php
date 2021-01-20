@@ -15,8 +15,9 @@
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<link rel="icon" type="image/png" href="//www.kontekwater.com/wp-content/uploads/2020/07/Rekon-Website.png">
 		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+		 <title><?php bloginfo('name'); ?></title>
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
@@ -93,14 +94,7 @@
 
 					<div class="header-titles mt-3 mb-3">
 
-						<?php
-							// Site title or logo.
-							twentytwenty_site_logo();
-
-							// Site description.
-							twentytwenty_site_description();
-						?>
-
+						<div class="site-title faux-heading"><a href="https://www.kontekwater.com/parts/"></a></div><div class="site-description"></div><!-- .site-description -->
 					</div><!-- .header-titles -->
 
 					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">

@@ -21,13 +21,13 @@ get_header();
     <div class="col">
         <form id="loginForm" action="https://www.kontekwater.com/parts/wp-login.php" method="POST">
             <input type="text" id='username' name="log" placeholder="Username" />
-            <input type="text" id='password' name="pwd" placeholder="Password" />
+            <input type="password" id='password' name="pwd" placeholder="Password" />
     </div>
     <div class="col"></div>
 </div>
-<div class="row">
+<div class="row mt-4">
     <div class="col text-center">
-        <span class="forgot-password">Forgot Password?</span>
+        <span class="forgot-password"><a href='https://www.kontekwater.com/parts/wp-login.php?action=lostpassword'>Forgot Password?</a></span>
         <br>
         <input id='customerLogin' type="submit" name="Login" value="Login" onclick=''>
     </div>

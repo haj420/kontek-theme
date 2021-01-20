@@ -11,6 +11,8 @@ if(get_current_user_id() == '1') {
 } else {
   $results = $wpdb->get_results("SELECT * from wp_projects where userID='".get_current_user_id()."'");
 }
+echo "<script>console.log('user id -> ".get_current_user_id()."')</script>";
+
 ?>
 
 <main id="site-content" role="main">
@@ -38,6 +40,9 @@ if(get_current_user_id() == '1') {
         </div>
         <?
         foreach($results as $row) {
+
+			echo "<script>console.log('project number -> ".$row->projectNumber."')</script>";
+			
             echo "
         <div class='row project_row mr-1 ml-1' id='".$row->projectNumber."' onclick='select_project(this.id);'>
             <div class='col-2 m-0 p-0 text-left'><span>".$row->projectNumber."</span></div>

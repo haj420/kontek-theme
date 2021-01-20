@@ -11,9 +11,7 @@
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
-  .form-control {
-    width:80%!important;
-  }
+
   label[for=BCity],
   label[for=SCity] {
     margin-top:-7px;
@@ -22,16 +20,14 @@ and (max-device-width : 1024px) {
   #orderForm input[name='SState'] {
     width: 85%!important;
   }
-}
-
-@media (min-width: 700px) {
-  .header-inner {
-      padding:10px!important;
+  #CViaTable {
+	margin-left: -38px!important;
   }
 }
 .faux-heading > a {
-  height:75px;
-  width:150px;
+    height: 66px;
+    width: 248px;
+    margin-top: -14px;
 }
 
 /* Turn Your Phone To Landscape */
@@ -43,9 +39,6 @@ and (max-device-width : 1024px) {
       #site-content{
           padding-bottom:100px!important;
 
-      }
-      .header-inner {
-          /* padding: 0 0!important; */
       }
       input#cartBtn, input#toggleDrawing {
           height:35px;
@@ -59,11 +52,6 @@ and (max-device-width : 1024px) {
       label#cartQty1 {
           width: 110px!important;
       }
-      .parts-search-bar {
-          position:absolute!important;
-          top:-12px!important;
-          height:90px!important;
-      }
       #searchField {
           margin: 24px 0 0px 24px!important;
       }
@@ -71,13 +59,10 @@ and (max-device-width : 1024px) {
         font-size: x-small!important;
       }
       #cartQty {
-          margin: -29px -31px 0px 0px!important;
+          margin: 11px -31px 0px 0px!important;
       }
       div.header-titles {
         /* height:22px!important; */
-      }
-      #table-of-parts {
-        margin-top:40%!important;
       }
   }
   @media (orientation:portrait) {
@@ -167,7 +152,16 @@ button.toggle.search-toggle {
  * Desc: This section is where you will find styles for the elements in the
  *      page header.php.
  */
-
+#searchSubmit {
+	display:none!important;
+}
+.mobile-search-toggle {
+	display:none!important;
+}
+.nav-toggle {
+	right:unset!important;
+	left:unset!important;
+}
 .item_added {
     width:70px;
 }
@@ -178,7 +172,7 @@ button.toggle.search-toggle {
     width: 102%;
     position: fixed;
     z-index: 1;
-    top: 11%;
+    top: 160px;
    /* margin-top: -13px; */     /*changed  5/17 on macbook */
 }
 #ProjDesc {
@@ -188,9 +182,10 @@ button.toggle.search-toggle {
     width: 100%;
     position: fixed;
     top: 0px;
+	height:160px;
 }
  #table-of-parts {
-    margin-top: 19%;  /*Lets hope this works without this !important; */
+    margin-top: 290px;  /*Lets hope this works without this !important; */
  }
 
  div.desktop-search-toggle {
@@ -258,8 +253,9 @@ span.spare-parts {
     font-weight:bold;
     margin-left:15px;
     border-bottom:10px solid #FFDE00;
-    padding-bottom:17%;
-    margin-bottom:-40%;
+    padding-bottom: 31%;
+    margin-bottom: -40%;
+    margin-top: 43px;
 }
 
 .primary-menu {
@@ -284,13 +280,25 @@ span.spare-parts {
     border:none;
     border-bottom:1px solid black;
 }
-input[name="Login"] {
+input#customerLogin
+ {
     background-color: #21368B!important;
     height: 43px;
     width: 140px;
     line-height: 7px;
     margin-top:30px;
 }
+#username,
+#password {
+  width:50%;
+  margin:10px auto 0 auto;
+  height: 40px;
+}
+.forgot-password a {
+   color: #21368B!important;
+   text-decoration: none;
+}
+
 /* Projets Page Styles
  * Desc: This section is where you will find styles for the elements
  *       in the page select-project-template.php
@@ -358,17 +366,18 @@ div.text {
     height: 35px;
     padding-left: 25px;
     margin:47px 0 0px 0px;
-    width: 90%;
+    font-size: x-small;
+	font-weight: bold;
 }
 
-#searchSubmit{
+/* #searchSubmit{
     background: url(/parts/wp-content/uploads/2020/02/209-2093777_white-magnifying-glass-icon-png-search-white-icon.png) no-repeat scroll 0 0 transparent;
     border: medium none;
     cursor: pointer;
     height: 20px;
     margin: 45px 0 0px -39px;
     width: 20px;
-}
+} */
 
 .hover-and-click {
     color:blue;
@@ -445,6 +454,7 @@ input[name="OpenDrawing"] {
 }
 #drawing {
     display:none;
+	margin-top:290px;
 }
 #pdfIframe {
     width:100%!important;
@@ -459,13 +469,16 @@ input[name="OpenDrawing"] {
  * Desc: This section is where you will find styles for the elements
  *       in the page cart-template.php
  */
+label {
+	font-size:x-small;
+}
 .checkout-div {
     background-color:#D4D5D6;
     border:1px solid white;
 }
 span.billingDetails {
     color:000000;
-    font-size:larger;
+    font-size:large;
     font-weight:bold;
 }
 input[name='shipToDiff'] {
@@ -473,9 +486,11 @@ input[name='shipToDiff'] {
     height:20px !important;
     width:20px !important;
 }
+input[name=shipToDiff] {
+	margin:0px!important;
+}
 span.shipToDiff {
-    color:000000;
-    font-size:larger;
+    font-size:large;
     font-weight:bold;
 }
 #orderForm input {
@@ -503,7 +518,7 @@ label[for=SZip] {
 {
     height: 40px;
     border: none;
-    width: 80%;
+    width: 74%;
     margin: 5px 0 0 -10px;
 }
 
@@ -524,12 +539,15 @@ label[for=SZip] {
 
 #orderForm input[name='TimeZone'] {
     width:90px;
-    margin-left:-45px;
+    margin-left:-55px;
 }
 
+table {
+	margin-top:0px!important;
+}
 #orderForm label[for='ContactVia'] {
     white-space:nowrap;
-    margin-left: -60px;
+    margin-left: -135px;
 }
 
 #ContactViaE {
@@ -548,9 +566,9 @@ table * {
     border:none;
 }
 #CViaTable {
-    width: 110px;
-    margin-left: -43px;
-    margin-top:-5px;
+    width: 64px;
+    margin-left: -42px;
+    margin-top: 20px;
     border: 0px solid transparent!important;
 }
 
@@ -562,6 +580,11 @@ table * {
 .CVTDL {
     padding:0px!important;
     width:70px;
+}
+span#CVE,
+span#CVP {
+	font-size:x-small;
+	font-weight:bold;
 }
 
 span.cart-head-span {
@@ -700,15 +723,15 @@ padding: 17px;
 /* MOBILE STYLES */
 @media only screen
   and (min-device-width: 320px)
-  and (max-device-width: 480px)
+  and (max-device-width: 900px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
     .parts-search-bar {
         width: 102%;
-        position: static;
+		height:100px!important;
+        position: relative!important;
         z-index: 1;
-        top: 43%;
-        margin-top: 124px;
+        top: 65px;
     }
     #searchField {
     border: 1px solid #FFEDE8;
@@ -716,10 +739,10 @@ padding: 17px;
     height: 35px;
     padding-left: 25px;
     margin: 47px 0 0px 5px;
-    width: 70%;
     }
-    #orderForm input {
-    width:unset;
+    #orderForm input.cart-submit {
+	    width:unset!important;
+		padding:0px!important;
     }
     #orderForm input[name='BPhoneP'], #orderForm input[name='BPhoneS'], #orderForm input[name='BZip'], #orderForm input[name='SZip'] {
         height: 40px;
@@ -728,7 +751,113 @@ padding: 17px;
         margin: 5px 11px;
     }
     #orderForm input[name='CallAt'] {
-        width: 77px;
+        width: 43px!important;
         margin-right: 0px;
     }
+	#orderForm input[name='TimeZone'] {
+        width: 43px;
+        margin-left: -39px;
+		margin-top:20px!important;
+    }
+	#orderForm input[name="BState"], #orderForm input[name="SState"] {
+	    width: 50px!important;
+	}
+	#orderForm input[name="SZip"] {
+	    margin-left: -10px;
+	}
+	#orderForm label[for='ContactVia'] {
+    	white-space: nowrap;
+    	margin-left: -22px;
+	}
+	#CViaTable {
+	    width: 69px;
+	    margin-left: -23px;
+		margin-top:20px!important;
+	    border: 0px solid transparent!important;
+	}
+	#BCountry,
+	#SCountry {
+		margin-top:20px!important;
+	}
+	.shipToDiff,
+	.billingDetails {
+		font-size:small!important;
+	}
+	label {
+		font-size:x-small!important;
+	}
+	.cart-titles {
+		height:90px!important;
+		font-size: small!important;
+	}
+	.delete>button {
+		width:7px!important;
+		height:27px!important;
+		font-size: 1rem!important;
+
+	}
+	.header-inner {
+		padding:0px!important;
+	}
+	.projectNumberSpan {
+	    margin-left: 0px!important;
+	}
+	/* #searchSubmit {
+		display:none!important;
+	} */
+	#table-of-parts {
+	  margin-top:60px!important;
+	}
+	.page-template-order-spare-parts-template > #site-header {
+		height:110px;
+	}
+	.partsTableHead {
+		font-size: small!important;
+	}
+
+}
+/* iPad (1024 x 768 ) */
+@media only screen
+  and (min-device-width: 1020px)
+  and (max-device-width: 1030px) {
+	  #table-of-parts {
+		  margin-top:256px;
+	  }
+	  #drawing {
+		  margin-top:256px!important;
+	  }
+	  #searchField {
+		  width:unset;
+	  }
+	  /* #searchSubmit {
+		  display:none;
+	  } */
+	  span.shipToDiff,
+	  span.billingDetails {
+    	font-size: medium;
+	}
+	  label {
+		  font-size:x-small!important;
+	  }
+	  #orderForm input[name='CallAt'] {
+		  width:50%!important;
+	  }
+	  #orderForm label[for='TimeZone'] {
+		  margin-left:-62px!important;
+	  }
+	  #orderForm input[name='TimeZone'] {
+		width:100%!important;
+		margin-left:-56px!important;
+		/* margin-top:20px!important; */
+	  }
+	  #CViaTable {
+		  margin-left:-72px!important;
+	  }
+	  input#ContactViaE.form-control {
+		  margin:0px!important;
+	  }
+	  span#CVE,
+	  span#CVP {
+		  /* margin-left:-31px!important; */
+	  }
 }

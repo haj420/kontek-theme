@@ -17,7 +17,8 @@ if (document.url === "//parts/order-spare-parts") {
 //Change color of clicked row (client request)
 $(".project_row").on('click', function() {
     $(this).css('border', '1px solid navy');
-    $("[name=choose-project]").submit();
+    //$("[name=choose-project]").submit();
+	window.location = "/parts/order-spare-parts/"
 });
 //Toggle the user's schematics pdf
 $('#toggleDrawing').click(function() {
@@ -47,7 +48,11 @@ $(document).ready(function($) {
   });
 });
 
-
+$(".on-page-search").on("keydown", function () {
+	if (event.keyCode === 10 || event.keyCode === 13) {
+	  event.preventDefault();
+  }
+});
 //Item verification Popup
 var mouse_is_inside = false;
 var $n = 0;
@@ -260,15 +265,24 @@ if(document.url === "//parts/cart/"){
 //Clear Ship info on click ship to DIFFERENT
 
 $("[name=shipToDiff]").change(function() {
-  $("#SCompany").val("");
-  $("#SStreet").val("");
-  $("#SCity").val("");
-  $("#SState").val("");
-  $("#SCity").val("");
-  $("#SZip").val("");
-  $("#SCountry").val("");
+	if( $("[name=shipToDiff]").is(':checked') ) {
+		//alert('box checked');
+		$("#SCompany").val(" ");
+		$("#SStreet").val(" ");
+		$("#SCity").val(" ");
+		$("#SState").val(" ");
+		$("#SZip").val(" ");
+		$("#SCountry").val(" ");
+	} else {
+		//alert('box unchecked');
+		$("#SCompany").val("");
+		$("#SStreet").val( "");
+		$("#SCity").val("");
+		$("#SState").val("");
+		$("#SZip").val("");
+		$("#SCountry").val("");
+	}
 });
-
 //Submit Cart Form
 $(".cart-submit").click(function() {
   if($("#BEmail").val() && $('#BPhoneP').val()) {
@@ -289,6 +303,12 @@ $(".cart-submit").click(function() {
             localStorage.clear();
             }
            });
+} else {
+	alert('The Email and Primary Phone number fields are required');
+	$("[for=BEmail] span").text('* Required ');
+	$("#BEmail").attr('style', 'border:1px solid red;');
+	$("[for=BPhoneP] span").text('* Required ');
+	$("#BPhoneP").attr('style', 'border:1px solid red;');
 }
 });
 
@@ -319,3 +339,4 @@ $("#customerLogin").click(function(){
     });
   }
 });
+$("#searchField").attr('placeholder', 'Search This Page!');

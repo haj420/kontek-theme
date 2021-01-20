@@ -18,10 +18,10 @@ get_header();
 <div class='row'>
     <div class='.d-sm-none .d-md-block col'></div>
     <div class='col-12 col-lg-10'>
-		<?PHP
-			 $results = $wpdb->get_results("SELECT * from wp_projects where userID='".get_current_user_id()."'");
-			foreach($results as $row) {
-				$pn = $row->projectNumber;
+    <?PHP
+    $pn = 'wp_'.$_POST['projectNumber'];
+    $results = $wpdb->get_results("SELECT * from wp_projects");
+    foreach($results as $row) {
         echo "
         <!-- #checkout-div -->
         <div class='checkout-div mt-5'>
@@ -36,95 +36,95 @@ get_header();
             </div>
             <div class='row'>
                 <div class='col-4'>
-                    <label for='BFirstName' class=' orderFormLabel'>First Name</label>
+                    <label for='BFirstName' class='small orderFormLabel'>First Name</label>
                     <input id='BFirstName' name='BFirstName' class='form-control' value='".$row->contactFirstName."'>
                 </div>
                 <div class='col-4'>
-                    <label for='BCompany' class=' orderFormLabel'>Company Name</label>
+                    <label for='BCompany' class='small orderFormLabel'>Company Name</label>
                     <input id='BCompany' name='BCompany'  class='form-control' value='".$row->Facility."'>
                 </div>
                 <div class='col-4'>
-                    <label for='SCompany' class=' orderFormLabel'>Company Name</label>
-                    <input id='SCompany' name='SCompany' class='form-control' value='".$row->Facility."' placeholder='".$row->Facility."'>
+                    <label for='SCompany' class='small orderFormLabel'>Company Name</label>
+                    <input id='SCompany' name='SCompany' class='form-control' value='".$row->Facility."'>
                 </div>
             </div>
             <div class='row'>
                 <div class='col-4'>
-                    <label for='BLastName' class=' orderFormLabel'>Last Name</label>
+                    <label for='BLastName' class='small orderFormLabel'>Last Name</label>
                     <input id='BLastName' name='BLastName' class='form-control' value='".$row->contactLastName."'>
                 </div>
                 <div class='col-4'>
-                    <label for='BStreet' class=' orderFormLabel'>Street Address</label>
+                    <label for='BStreet' class='small orderFormLabel'>Street Address</label>
                     <input id='BStreet' name='BStreet' class='form-control' value='".$row->Street."'>
                 </div>
                 <div class='col-4'>
-                    <label for='SStreet' class=' orderFormLabel'>Street Address</label>
-                    <input id='SStreet' name='SStreet' class='form-control' value='".$row->Street."' placeholder='".$row->Street."'>
+                    <label for='SStreet' class='small orderFormLabel'>Street Address</label>
+                    <input id='SStreet' name='SStreet' class='form-control' value='".$row->Street."'>
                 </div>
             </div>
             <div class='row'>
                 <div class='col-2'>
-                    <label for='BPhoneP' class=' orderFormLabel'>Phone<br> Primary <span style='color:red'>*</span></label>
+                    <label for='BPhoneP' class='small orderFormLabel'>Phone Primary</label>
                     <input id='BPhoneP' name='BPhoneP' class='form-control' value='".$row->primaryPhone."'>
                 </div>
-                <div class='col-2 pl-0'>
-                    <label for='BPhoneS' class=' orderFormLabel'>Phone<br> Secondary</label>
+                <div class='col-2'>
+                    <label for='BPhoneS' class='small orderFormLabel'>Phone Secondary</label>
                     <input id='BPhoneS' name='BPhoneS' class='form-control' value='".$row->secondaryPhone."'>
                 </div>
                 <div class='col-4'>
-                    <label for='BCity' class=' orderFormLabel'>City</label>
+                    <label for='BCity' class='small orderFormLabel'>City</label>
                     <input id='BCity' name='BCity' class='form-control' value='".$row->City."'>
                 </div>
                 <div class='col-4'>
-                    <label for='SCity' class=' orderFormLabel'>City</label>
-                    <input id='SCity' name='SCity' class='form-control' value='".$row->City."' placeholder='".$row->City."'>
+                    <label for='SCity' class='small orderFormLabel'>City</label>
+                    <input id='SCity' name='SCity' class='form-control' value='".$row->City."'>
                 </div>
             </div>
             <div class='row'>
                 <div class='col-4'>
-                    <label for='BEmail' class=' orderFormLabel'>Email <span style='color:red'>*</span></label>
+                    <label for='BEmail' class='small orderFormLabel'>Email</label>
                     <input id='BEmail' name='BEmail' class='form-control' required='required'>
                 </div>
                 <div class='col-2'>
-                    <label for='BState' class=' orderFormLabel'>State/Province</label>
+                    <label for='BState' class='small orderFormLabel'>State/Province</label>
                     <input id='BState' name='BState' class='form-control' value='".$row->State."'>
                 </div>
                 <div class='col-2'>
-                    <label for='BZip' class=' orderFormLabel'>Postal Code</label>
+                    <label for='BZip' class='small orderFormLabel'>Postal Code</label>
                     <input id='BZip' name='BZip' class='form-control' value='".$row->zip."'>
                 </div>
                 <div class='col-2'>
-                   <label for='SState' class=' orderFormLabel'>State/Province</label>
-                   <input id='SState' name='SState' class='form-control' value='".$row->State."' placeholder='".$row->State."'>
+                   <label for='SState' class='small orderFormLabel'>State/Province</label>
+                   <input id='SState' name='SState' class='form-control' value='".$row->State."'>
                </div>
-               <div class='col-2 pl-0'>
-                   <label for='SZip' class=' orderFormLabel'>Postal Code</label>
-                   <input id='SZip' name='SZip' class='form-control' value='".$row->zip."' placeholder='".$row->zip."'>
+               <div class='col-2'>
+                   <label for='SZip' class='small orderFormLabel'>Postal Code</label>
+                   <input id='SZip' name='SZip' class='form-control' value='".$row->zip."'>
                </div>
             </div>
             <div class='row'>
                 <div class='col-2'>
-                    <label for='CallAt' class=' orderFormLabel'>Best Time to Contact</label>
+                    <label for='CallAt' class='small orderFormLabel'>Best Time to Contact</label>
                     <input id='CallAt' name='CallAt' class='form-control'>
                 </div>
                 <div class='col-1'>
-                    <label for='TimeZone' class=' orderFormLabel'>Time Zone</label>
+                    <label for='TimeZone' class='small orderFormLabel'>Time Zone</label>
                     <input id='TimeZone' name='TimeZone' class='form-control'>
                 </div>
                 <div class='col-1 text-center'>
-                    <label for='ContactVia' class=' orderFormLabel'>Contact Me By</label>
+                    <label for='ContactVia' class='small orderFormLabel'>Contact Me By</label>
                 <table id='CViaTable'><tr><td class='CVTDI'>
-                    <input type='radio' id='ContactViaE' name='ContactVia' value='email' class='form-control'></td><td class='CVTDL'><span  id='CVE'>Email </span>
+                    <input type='radio' id='ContactViaE' name='ContactVia' value='email' class='form-control'></td><td class='CVTDL'><span class='small' id='CVE'>Email </span>
                        </td></tr><tr><td class='CVTDI'>
-                    <input type='radio' id='ContactViaP' name='ContactVia' value='Phone' class='form-control'></td><td class='CVTDL'><span  id='CVP'>Phone </span>
+                    <input type='radio' id='ContactViaP' name='ContactVia' value='Phone' class='form-control'></td><td class='CVTDL'><span class='small' id='CVP'>Phone </span>
                         </td></tr></table>
                 </div>
                 <div class='col-4'>
-                    <label for='BCountry' class=' orderFormLabel'>Country</label>
+                    <label for='BCountry' class='small orderFormLabel'>Country</label>
                     <input id='BCountry' name='BCountry' class='form-control'>
                 </div>
                 <div class='col-4'>
-                    <label for='SCountry' class=' orderFormLabel'>Country</label>
+                    <label for='SCountry' class='small orderFormLabel'>Country</label>
                     <input id='SCountry' name='SCountry' class='form-control'>
                 </div>
             </div>
@@ -178,7 +178,7 @@ get_header();
         ?>
         <div class='row pt-5 pb-5'>
             <div class='col'>
-                <span class='finePrint '>Kontek Water assumes no responsibility to process Spare Parts orders requested via this website until the order has been acknowledged and quoted by a Kontek authorized sales representative and accepted by an authorized purchaser on record at Kontek for the ordering company. Upon acceptance of your order, Kontek’s standard sales terms and conditions apply. </span>
+                <span class='finePrint small'>Kontek Water assumes no responsibility to process Spare Parts orders requested via this website until the order has been acknowledged and quoted by a Kontek authorized sales representative and accepted by an authorized purchaser on record at Kontek for the ordering company. Upon acceptance of your order, Kontek’s standard sales terms and conditions apply. </span>
             </div>
         </div>
     </div>
@@ -202,10 +202,9 @@ get_header();
 
 <?php get_footer();
  echo("
- <script>console.log('pn set to ".$pn."');</script>
 <script>
 for(var i=0, len=localStorage.length; i<len; i++) {
-    var project_number = '".$pn."';
+    var project_number = 'K2018295';
     var key = localStorage.key(i);
     var value = localStorage[key];
     console.log(key + ' => ' + value);
